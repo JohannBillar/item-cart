@@ -18,10 +18,12 @@ class NewItem extends React.Component {
   
   render() {
     return (
-      <div>
-       <input ref="name" placeholder="Enter the name of an item"/>
-       <input ref="description" placeholder="Enter a description"/>
-       <button onClick={this.handleClick}>Submit</button>
+      <div className="col-12 offset-2">
+        <div className="row">
+          <input type="text" ref="name" placeholder="Enter the name of an item" className="col-4 form-control" />
+          <input type="text" ref="description" placeholder="Enter a description" className="col-4 form-control" />
+          <button type="button" onClick={this.handleClick} className="btn btn-outline-primary">Submit</button>
+        </div>
       </div>
     );
   }

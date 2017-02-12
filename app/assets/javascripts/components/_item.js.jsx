@@ -21,13 +21,13 @@ class Item extends React.Component {
   render() {
     const name = this.state.editable ? <input type="text" ref="name" defaultValue={this.props.item.name} /> : <h3>{this.props.item.name}</h3>;
     const description = this.state.editable ? <input type="text" ref="description" defaultValue={this.props.item.description} /> : <p>{this.props.item.description}</p>;
+    const buttonStyle = this.state.editable ? 'btn btn-outline-primary btn-sm' : 'btn btn-outline-success btn-sm'
     return (
-      <div>
+      <div className="col-12 offset-2 items">
         {name}
         {description}
-        <p>{this.props.item.id}</p>
-        <button onClick={this.props.handleDelete}>Delete</button>
-        <button onClick={this.handleEdit} >{this.state.editable ? 'Submit' : 'Edit'}</button>
+        <button type="button" onClick={this.props.handleDelete} className="btn btn-outline-danger btn-sm">Delete</button>
+        <button type="button" onClick={this.handleEdit} className={buttonStyle}>{this.state.editable ? 'Submit' : 'Edit'}</button>
       </div>
     );
   }
